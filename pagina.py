@@ -86,8 +86,8 @@ def generate_playlist(user_input):
 # --- Interface do Streamlit ---
 
 # Título da página
-st.set_page_config(page_title="PlaylistBot", page_icon="🎵")
-st.title("🎵 PlaylistBot")
+st.set_page_config(page_title="Playlisto", page_icon="🎵")
+st.title("Calma aí, playlisto 👐")
 st.caption("Um chatbot para criar playlists no YouTube com base no seu gosto musical.")
 
 # Inicializar o histórico do chat na memória da sessão
