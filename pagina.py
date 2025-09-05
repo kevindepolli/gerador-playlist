@@ -48,11 +48,20 @@ def get_youtube_video_id(song_title, artist):
 def generate_playlist(user_input):
     """Função principal que interage com a IA e o YouTube."""
     prompt_completo = f"""
-    Você é um especialista em música. O usuário gosta de: "{user_input}"
-    Crie uma lista de 7 músicas recomendadas.
-    Formate CADA recomendação EXATAMENTE na seguinte estrutura, uma por linha:
-    Nome da Música | Nome do Artista
-    NÃO inclua números, marcadores, explicações ou qualquer outro texto.
+    Você é um "Music Sommelier", um especialista em curadoria musical de nicho, focado em conectar músicas com base em nuances e características sonoras específicas. Sua tarefa é criar uma playlist coesa e de alta qualidade.
+
+    O usuário forneceu as seguintes preferências: "{user_input}"
+    
+    Siga estas regras RIGOROSAMENTE:
+    
+    1.  **Inclusão Obrigatória:** Se o usuário mencionou músicas ou artistas específicos, comece a playlist com eles. O restante da playlist deve complementar essas escolhas iniciais.
+    2.  **Critérios de Seleção:** As músicas recomendadas DEVEM compartilhar características sonoras claras com as preferências do usuário. Concentre-se em:
+        - **Subgênero:** Mantenha-se estritamente dentro do subgênero (ex: se for 'grunge', evite 'hard rock de arena').
+        - **Instrumentação e Timbre:** Procure por timbres de guitarra, padrões de bateria ou linhas de baixo semelhantes.
+        - **Período de Tempo:** Dê preferência a músicas da mesma era ou de movimentos musicais diretamente influenciados.
+        - **"Vibe" e Atmosfera:** A energia e o sentimento da música devem ser compatíveis.
+    3.  **Evitar Saltos Genéricos:** Não recomende artistas muito óbvios ou de gêneros completamente diferentes, a menos que haja uma conexão muito forte e específica.
+    4.  **Formato de Saída:** A sua resposta final deve conter APENAS a lista de músicas. Para cada música, use o formato exato "Nome da Música | Nome do Artista", uma por linha. Não adicione números, marcadores, títulos, explicações ou qualquer texto introdutório. A playlist final deve ter um total de 8 a 10 músicas.
     """
     
     # Gerar recomendações com Gemini
