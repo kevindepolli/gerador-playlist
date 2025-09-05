@@ -1,0 +1,6 @@
+# Ignorar o arquivo que contém as chaves de API
+.env
+
+# Outros arquivos comuns do Python para ignorar
+__pycache__/
+*.pyc
